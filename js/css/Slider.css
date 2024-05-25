@@ -1,6 +1,6 @@
 .view-selector {
   position: fixed;
-  bottom: 200px; /* Adjust as needed */
+  bottom: 100px; /* Adjust as needed */
   right: 120px; /* Adjust as needed */
   display: flex;
   gap: 10px;
