@@ -61,8 +61,8 @@
 }
 
 .slider-wrapper .image-list .image-item {
-  width: 150px; /* Change this to adjust the image width */
-  height: 100px; /* Change this to adjust the image height */
+  width: 200px;
+  height: auto;
   object-fit: cover;
   display: inline-block;
 }
@@ -88,7 +88,7 @@
   height: 4px;
 }
 
-slider-scrollbar .scrollbar-thumb {
+.slider-scrollbar .scrollbar-thumb {
   position: absolute;
   background: #000;
   top: 0;
@@ -126,8 +126,8 @@ slider-scrollbar .scrollbar-thumb {
   }
 
   .slider-wrapper .image-list .image-item {
-    width: 120px; /* Adjusted width for smaller screens */
-    height: 80px; /* Adjusted height for smaller screens */
+    width: 140px;
+    height: auto; /* Adjusted height proportionally */
   }
 
   .slider-scrollbar .scrollbar-thumb {
@@ -158,17 +158,17 @@ slider-scrollbar .scrollbar-thumb {
   position: relative;
   top: 40px;
   z-index: 1;
-  width: 150px; /* Change this to adjust the overlay image width */
-  height: 100px; /* Change this to adjust the overlay image height */
+  width: 200px;
+  height: auto;
   user-select: none;
 }
 
 .overlay-image .game-image {
   position: absolute;
-  top: 10px; /* Adjust the top position as needed */
-  left: 10px; /* Adjust the left position as needed */
-  width: 100px; /* Change this to adjust the game image width */
-  height: 70px; /* Change this to adjust the game image height */
+  top: 10px;
+  left: 10px;
+  width: 150px;
+  height: auto;
   object-fit: cover;
   z-index: 0;
   user-select: none;
@@ -176,5 +176,5 @@ slider-scrollbar .scrollbar-thumb {
 
 .image-item-gap {
   display: inline-block;
-  width: 0px; /* Adjust the width to set the gap size */
+  width: 0px;
 }
