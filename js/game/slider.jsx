@@ -8,7 +8,8 @@ const Slider = () => {
   const [games, setGames] = useState({ slots: [], fishes: [], casinos: [], other: [] });
   const [maxScrollLeft, setMaxScrollLeft] = useState(0);
   const [maxThumbPosition, setMaxThumbPosition] = useState(0);
-  const [currentView, setCurrentView] = useState('slots'); // New state variable for toggling views
+  const [currentView, setCurrentView] = useState('all'); // Default to 'all' view
+  const [isTransitioning, setIsTransitioning] = useState(false); // State for handling transition
 
   useEffect(() => {
     const fetchGames = () => {
@@ -122,24 +123,32 @@ const Slider = () => {
   );
 
   const handleViewChange = (view) => {
-    setCurrentView(view);
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentView(view);
+      setIsTransitioning(false);
+    }, 500); // Transition duration matches CSS transition
   };
+
+  const allGames = [...games.slots, ...games.fishes, ...games.casinos, ...games.other];
 
   return (
     <>
       <div className="view-selector">
+        <button onClick={() => handleViewChange('all')} className={`view-button ${currentView === 'all' ? 'active' : ''}`}>All</button>
         <button onClick={() => handleViewChange('slots')} className={`view-button ${currentView === 'slots' ? 'active' : ''}`}>Slots</button>
         <button onClick={() => handleViewChange('fishes')} className={`view-button ${currentView === 'fishes' ? 'active' : ''}`}>Fishes</button>
         <button onClick={() => handleViewChange('casinos')} className={`view-button ${currentView === 'casinos' ? 'active' : ''}`}>Casinos</button>
         <button onClick={() => handleViewChange('other')} className={`view-button ${currentView === 'other' ? 'active' : ''}`}>Other</button>
       </div>
-      <div className="outer-container">
+      <div className={`outer-container ${isTransitioning ? 'hidden' : ''}`}>
         <div className="container">
           <div className="slider-wrapper">
             <button id="prev-slide" className="slide-button" onClick={() => handleSlide(-1)}>
               &lt;
             </button>
             <ul className="image-list" ref={imageListRef}>
+              {currentView === 'all' && allGames.map(renderGameItem)}
               {currentView === 'slots' && games.slots.map(renderGameItem)}
               {currentView === 'fishes' && games.fishes.map(renderGameItem)}
               {currentView === 'casinos' && games.casinos.map(renderGameItem)}
