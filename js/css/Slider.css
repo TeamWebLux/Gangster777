@@ -156,7 +156,7 @@
 
 .overlay-image img:first-child {
   position: relative;
-  top: 40px;
+  /* top: 40px; */
   z-index: 1;
   width: 200px;
   height: auto;
