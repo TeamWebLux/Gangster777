@@ -1,12 +1,11 @@
-/* From Github*/
-/* From Server*/
 .container {
-  position: absolute; /* Changed to absolute to position it relative to the page */
-  right: 100px;       /* Aligns to the right edge of the page */
-  bottom: 200px;      /* Aligns to the bottom edge of the page */
+  position: absolute;
+  right: 100px;
+  bottom: 200px;
   max-width: 1200px;
-  width: 60%;         /* Adjusted width as per your requirement */
-  margin: 20px;       /* Adds some margin to give space from the edges */
+  width: 60%;
+  margin: 20px;
+  overflow: hidden; /* Prevents scrolling on Y-axis */
 }
 
 .slider-wrapper {
@@ -52,8 +51,9 @@
   list-style: none;
   margin-bottom: 30px;
   overflow-x: auto;
-  white-space: nowrap; /* Keep items in a single line */
+  white-space: nowrap;
   scrollbar-width: none;
+  overflow-y: hidden; /* Prevents vertical scrolling */
 }
 
 .slider-wrapper .image-list::-webkit-scrollbar {
@@ -61,10 +61,10 @@
 }
 
 .slider-wrapper .image-list .image-item {
-  width: 200px; /* Adjusted width */
-  height: auto; /* Adjusted height proportionally */
+  width: 150px; /* Change this to adjust the image width */
+  height: 100px; /* Change this to adjust the image height */
   object-fit: cover;
-  display: inline-block; /* Ensure the images do not wrap */
+  display: inline-block;
 }
 
 .container .slider-scrollbar {
@@ -88,7 +88,7 @@
   height: 4px;
 }
 
-.slider-scrollbar .scrollbar-thumb {
+slider-scrollbar .scrollbar-thumb {
   position: absolute;
   background: #000;
   top: 0;
@@ -114,7 +114,6 @@
   bottom: -10px;
 }
 
-/* Styles for mobile and tablets */
 @media only screen and (max-width: 1023px) {
   .slider-wrapper .slide-button {
     display: none !important;
@@ -127,8 +126,8 @@
   }
 
   .slider-wrapper .image-list .image-item {
-    width: 140px; /* Adjusted width for smaller screens */
-    height: 190px; /* Adjusted height proportionally */
+    width: 120px; /* Adjusted width for smaller screens */
+    height: 80px; /* Adjusted height for smaller screens */
   }
 
   .slider-scrollbar .scrollbar-thumb {
@@ -139,7 +138,7 @@
 .image-item-container {
   position: relative;
   display: inline-block;
-  margin-right: 20px; /* Adjust the margin as needed for the gap */
+  margin-right: 20px;
   user-select: none;
 }
 
@@ -158,21 +157,21 @@
 .overlay-image img:first-child {
   position: relative;
   top: 40px;
-  z-index: 1; /* Overlay image should be on top JUST A TEST*/
-  width: 200px; /* Adjust the width as needed */
-  height: auto; /* Adjust the height as needed */
-   user-select: none;
+  z-index: 1;
+  width: 150px; /* Change this to adjust the overlay image width */
+  height: 100px; /* Change this to adjust the overlay image height */
+  user-select: none;
 }
 
 .overlay-image .game-image {
   position: absolute;
   top: 10px; /* Adjust the top position as needed */
   left: 10px; /* Adjust the left position as needed */
-  width: 150px; /* Adjust the width as needed */
-  height: auto; /* Adjust the height as needed */
-  object-fit: cover; /* Adjust to fit your design */
-  z-index: 0; /* Game image should be underneath the overlay */
-   user-select: none;
+  width: 100px; /* Change this to adjust the game image width */
+  height: 70px; /* Change this to adjust the game image height */
+  object-fit: cover;
+  z-index: 0;
+  user-select: none;
 }
 
 .image-item-gap {
