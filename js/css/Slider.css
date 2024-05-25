@@ -97,6 +97,13 @@
   height: 100%;
   cursor: grab;
   border-radius: inherit;
+  box-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f; /* Glowing effect */
+  animation: glowing 1.5s infinite alternate; /* Apply animation */
+}
+
+@keyframes glowing {
+  0% { box-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f; }
+  100% { box-shadow: 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff; }
 }
 
 .slider-scrollbar .scrollbar-thumb:active {
