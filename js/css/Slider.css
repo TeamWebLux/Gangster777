@@ -1,3 +1,9 @@
+body {
+  font-family: 'Cinzel', serif; /* A stylish font for a gangster theme */
+  background-color: #1c1c1c; /* Dark background for the body */
+  color: #fff; /* Light text color */
+}
+
 .view-selector {
   position: fixed;
   bottom: 250px; /* Adjust as needed */
@@ -9,29 +15,30 @@
 
 .view-button {
   padding: 10px 20px;
-  background-color: #000;
-  color: #fff;
-  border: none;
+  background-color: #222; /* Dark background for the buttons */
+  color: #ffd700; /* Gold text color for a luxurious feel */
+  border: 2px solid #ffd700; /* Gold border */
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
-  box-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 15px #00f; /* Glowing effect */
+  box-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffd700; /* Glowing gold effect */
   animation: glowing 1.5s infinite alternate; /* Apply animation */
-  transition: background-color  0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .view-button:hover {
-  background-color: #404040;
+  background-color: #444; /* Slightly lighter background on hover */
+  color: #fff; /* White text color on hover */
 }
 
 .view-button.active {
-  background-color: #00f;
-  color: #fff;
+  background-color: #ffd700; /* Gold background for active button */
+  color: #000; /* Black text color for active button */
 }
 
 @keyframes glowing {
-  0% { box-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 15px #00f; }
-  100% { box-shadow: 0 0 10px #0ff, 0 0 15px #0ff, 0 0 20px #0ff; }
+  0% { box-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffd700; }
+  100% { box-shadow: 0 0 10px #ffdd00, 0 0 15px #ffdd00, 0 0 20px #ffdd00; }
 }
 
 .outer-container {
@@ -44,7 +51,7 @@
   background-repeat: no-repeat; /* Prevents repeating the background image */
   background-position: center; /* Centers the background image */
   border-radius: 15px; /* Sets the border radius */
-  border: 4px solid #ccc; /* Adds a border */
+  border: 4px solid #444; /* Dark border */
   width: calc(100vw - 20px); /* Ensure it fits within the viewport, accounting for padding */
   max-width: 1000px; /* Increased max-width */
   box-sizing: border-box; /* Include padding in the width and height */
@@ -64,7 +71,7 @@
   margin: 15px 0; /* Increased margin on top and bottom */
   overflow: hidden; /* Prevents scrolling on Y-axis */
   border-radius: 10px; /* Sets the border radius */
-  /* background-color: rgba(255, 255, 255, 0.8); Optional: add a semi-transparent background for better visibility */
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
 }
 
 .slider-wrapper {
@@ -89,12 +96,12 @@
   justify-content: center;
   border-radius: 50%;
   transform: translateY(-50%);
-  box-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 15px #00f; /* Glowing effect */
+  box-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffd700; /* Glowing gold effect */
   animation: glowing 1.5s infinite alternate; /* Apply animation */
 }
 
 .slider-wrapper .slide-button:hover {
-  background: #404040;
+  background: #222;
 }
 
 .slider-wrapper .slide-button#prev-slide {
@@ -104,11 +111,6 @@
 
 .slider-wrapper .slide-button#next-slide {
   right: -17.5px;
-}
-
-@keyframes glowing {
-  0% { box-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 15px #00f; }
-  100% { box-shadow: 0 0 10px #0ff, 0 0 15px #0ff, 0 0 20px #0ff; }
 }
 
 .slider-wrapper .image-list {
@@ -133,6 +135,9 @@
   height: auto;
   object-fit: cover;
   display: inline-block;
+  border: 2px solid #ffd700; /* Gold border for each image */
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700; /* Glowing gold effect */
 }
 
 .container .slider-scrollbar {
@@ -143,7 +148,7 @@
 }
 
 .slider-scrollbar .scrollbar-track {
-  background: rgb(0, 0, 0);
+  background: #444;
   width: 100%;
   height: 3px; /* Increased height */
   display: flex;
@@ -158,14 +163,14 @@
 
 .slider-scrollbar .scrollbar-thumb {
   position: absolute;
-  background: rgb(255, 255, 255);
+  background: #ffd700;
   top: 0;
   bottom: 0;
   width: 35%; /* Increased width */
   height: 100%;
   cursor: grab;
   border-radius: inherit;
-  box-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 15px #00f; /* Glowing effect */
+  box-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffd700; /* Glowing effect */
   animation: glowing 1.5s infinite alternate; /* Apply animation */
 }
 
@@ -246,4 +251,3 @@
   display: inline-block;
   width: 0px;
 }
-
