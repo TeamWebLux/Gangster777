@@ -90,7 +90,7 @@
 
 .slider-scrollbar .scrollbar-thumb {
   position: absolute;
-  background: #00f;
+  background: rgb(255, 255, 255);
   top: 0;
   bottom: 0;
   width: 50%;
