@@ -1,3 +1,14 @@
+.outer-container {
+  position: relative;
+  padding: 20px; /* Padding around the container */
+  background-image: url('your-background-image.jpg'); /* Replace with your image path */
+  background-size: cover; /* Ensures the entire image is visible */
+  background-repeat: no-repeat; /* Prevents repeating the background image */
+  background-position: center; /* Centers the background image */
+  border-radius: 20px; /* Sets the border radius */
+  border: 2px solid #ccc; /* Adds a border */
+}
+
 .container {
   position: absolute;
   right: 100px;
@@ -6,6 +17,7 @@
   width: 60%;
   margin: 20px;
   overflow: hidden; /* Prevents scrolling on Y-axis */
+  border-radius: 10px; /* Sets the border radius */
 }
 
 .slider-wrapper {
@@ -163,7 +175,6 @@
 
 .overlay-image img:first-child {
   position: relative;
-  /* top: 40px; */
   z-index: 1;
   width: 200px;
   height: auto;
@@ -172,7 +183,6 @@
 
 .overlay-image .game-image {
   position: absolute;
-  /* top: 10px; */
   left: 10px;
   width: 150px;
   height: auto;
