@@ -1,7 +1,7 @@
 .view-selector {
   position: fixed;
   bottom: 250px; /* Adjust as needed */
-  right: 120px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
   display: flex;
   flex-direction: column; /* Arrange buttons vertically */
   gap: 10px;
