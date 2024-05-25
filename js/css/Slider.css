@@ -1,7 +1,12 @@
-.toggle-button {
+.view-selector {
   position: fixed;
-  bottom: 150px; /* Adjust as needed */
+  bottom: 200px; /* Adjust as needed */
   right: 120px; /* Adjust as needed */
+  display: flex;
+  gap: 10px;
+}
+
+.view-button {
   padding: 10px 20px;
   background-color: #000;
   color: #fff;
@@ -11,10 +16,16 @@
   font-size: 1rem;
   box-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 15px #00f; /* Glowing effect */
   animation: glowing 1.5s infinite alternate; /* Apply animation */
+  transition: background-color 0.3s ease;
 }
 
-.toggle-button:hover {
+.view-button:hover {
   background-color: #404040;
+}
+
+.view-button.active {
+  background-color: #00f;
+  color: #fff;
 }
 
 @keyframes glowing {
@@ -22,12 +33,11 @@
   100% { box-shadow: 0 0 10px #0ff, 0 0 15px #0ff, 0 0 20px #0ff; }
 }
 
-
 .outer-container {
-  position: fixed; /* Fixes the position relative to the viewport */
+  position: fixed;
   bottom: 200px; /* Distance from the bottom of the viewport */
   right: 120px; /* Distance from the right of the viewport */
-  padding: 15px; /* Increased padding around the container */
+   padding: 15px; /* Increased padding around the container */
   background-image: url('/gangster_assets/cards/slider-bg.webp'); /* Replace with your image path */
   background-size: cover; /* Ensures the entire image is visible */
   background-repeat: no-repeat; /* Prevents repeating the background image */
@@ -37,6 +47,13 @@
   width: calc(100vw - 20px); /* Ensure it fits within the viewport, accounting for padding */
   max-width: 1000px; /* Increased max-width */
   box-sizing: border-box; /* Include padding in the width and height */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 1;
+}
+
+.outer-container.hidden {
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .container {
@@ -103,6 +120,7 @@
   white-space: nowrap;
   scrollbar-width: none;
   overflow-y: hidden; /* Prevents vertical scrolling */
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 .slider-wrapper .image-list::-webkit-scrollbar {
@@ -227,3 +245,4 @@
   display: inline-block;
   width: 0px;
 }
+
