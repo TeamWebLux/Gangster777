@@ -127,7 +127,15 @@ const Slider = () => {
     setTimeout(() => {
       setCurrentView(view);
       setIsTransitioning(false);
+      resetScroll();
     }, 500); // Transition duration matches CSS transition
+  };
+
+  const resetScroll = () => {
+    const imageList = imageListRef.current;
+    imageList.scrollLeft = 0;
+    handleSlideButtons();
+    updateScrollThumbPosition();
   };
 
   const allGames = [...games.slots, ...games.fishes, ...games.casinos, ...games.other];
