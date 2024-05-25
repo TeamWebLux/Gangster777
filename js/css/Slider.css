@@ -1,7 +1,7 @@
 .outer-container {
   position: fixed; /* Fixes the position relative to the viewport */
-  bottom: 10px; /* Distance from the bottom of the viewport */
-  right: 10px; /* Distance from the right of the viewport */
+  bottom: 200px; /* Distance from the bottom of the viewport */
+  right: 200px; /* Distance from the right of the viewport */
   padding: 15px; /* Increased padding around the container */
   background-image: url('/gangster_assets/cards/slider-bg.webp'); /* Replace with your image path */
   background-size: cover; /* Ensures the entire image is visible */
