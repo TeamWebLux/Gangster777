@@ -122,13 +122,19 @@ const Slider = () => {
   );
 
   const toggleView = () => {
-    setCurrentView((prevView) => (prevView === 'slots' ? 'fishes' : 'slots'));
+    const views = ['slots', 'fishes', 'casinos', 'other'];
+    const currentIndex = views.indexOf(currentView);
+    const nextIndex = (currentIndex + 1) % views.length;
+    setCurrentView(views[nextIndex]);
   };
 
   return (
     <>
       <button onClick={toggleView} className="toggle-button">
-        {currentView === 'slots' ? 'Show Fishes' : 'Show Slots'}
+        {currentView === 'slots' && 'Show Fishes'}
+        {currentView === 'fishes' && 'Show Casinos'}
+        {currentView === 'casinos' && 'Show Other'}
+        {currentView === 'other' && 'Show Slots'}
       </button>
       <div className="outer-container">
         <div className="container">
@@ -137,7 +143,10 @@ const Slider = () => {
               &lt;
             </button>
             <ul className="image-list" ref={imageListRef}>
-              {currentView === 'slots' ? games.slots.map(renderGameItem) : games.fishes.map(renderGameItem)}
+              {currentView === 'slots' && games.slots.map(renderGameItem)}
+              {currentView === 'fishes' && games.fishes.map(renderGameItem)}
+              {currentView === 'casinos' && games.casinos.map(renderGameItem)}
+              {currentView === 'other' && games.other.map(renderGameItem)}
             </ul>
             <button id="next-slide" className="slide-button" onClick={() => handleSlide(1)}>
               &gt;
