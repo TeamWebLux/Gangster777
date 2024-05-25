@@ -160,7 +160,7 @@ const Slider = () => {
             &lt;
           </button>
           <ul className="image-list" ref={imageListRef}>
-            {games.slots.map(renderGameItem)}
+            {games.fishes.map(renderGameItem)}
           </ul>
           <button id="next-slide" className="slide-button" onClick={() => handleSlide(1)}>
             &gt;
