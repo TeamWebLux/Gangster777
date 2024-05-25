@@ -22,7 +22,7 @@
   margin: 20px 0; /* Margin on top and bottom */
   overflow: hidden; /* Prevents scrolling on Y-axis */
   border-radius: 10px; /* Sets the border radius */
-  background-color: rgba(255, 255, 255, 0.8); /* Optional: add a semi-transparent background for better visibility */
+  background-color: rgba(255, 255, 255, 0.2); /* Optional: add a semi-transparent background for better visibility */
 }
 
 .slider-wrapper {
