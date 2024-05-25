@@ -1,0 +1,55 @@
+.cowboy-card {
+  position: fixed;
+  top: 50%;
+  left: 100px; /* Adjust the left position as needed */
+  transform: translateY(-50%);
+  width: auto; /* Adjust the width as needed */
+  height: auto; /* Set height to 40% of viewport height */
+}
+
+.video-container {
+  position: relative;
+  display: inline-block;
+  padding-right: 20px; /* Adjust padding to create space between video and line */
+}
+
+.video {
+  width: auto;
+  height: 53vh;
+  object-fit: cover; /* Maintain aspect ratio and cover entire container */
+  border-radius: 10px; /* Add border radius of 10px */
+}
+
+.line {
+  position: absolute;
+  top: 0;
+  right: -10px; /* Adjust the position of the line */
+  height: 100%;
+  width: 3px; /* Adjust the width of the line */
+  background-color: #fff; /* White color for the line */
+  animation: lineAnimation 8s infinite alternate, glowAnimation 8s infinite alternate; /* Apply height animation and glow animation */
+}
+
+@keyframes lineAnimation {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 100%;
+  }
+  100% {
+    height: 0;
+  }
+}
+
+@keyframes glowAnimation {
+  0% {
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.7);
+  }
+}
