@@ -6,15 +6,15 @@
   width: 60%;
   margin: 20px;
   overflow: hidden; /* Prevents scrolling on Y-axis */
+  background-image: url('/gangster_assets/cards/slider-bg.webp'); /* Replace with your image path */
+  background-size: contain; /* Ensures the entire image is visible */
+  background-repeat: no-repeat; /* Prevents repeating the background image */
+  background-position: center; /* Centers the background image */
+  border-radius: 10px; /* Sets the border radius */
 }
 
 .slider-wrapper {
   position: relative;
-  background-image: url('/gangster_assets/cards/slider-bg.webp'); /* Replace with your image path */
-  background-size: cover; /* Ensures the image covers the entire area */
-  background-position: center; /* Centers the background image */
-  border-radius: 10px; /* Sets the border radius */
-  overflow: hidden; /* Ensures the border radius is applied correctly */
 }
 
 .slider-wrapper .slide-button {
