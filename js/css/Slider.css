@@ -9,8 +9,8 @@
   background-position: center; /* Centers the background image */
   border-radius: 15px; /* Sets the border radius */
   border: 2px solid #ccc; /* Adds a border */
-  width: calc(100vw - 30px); /* Ensure it fits within the viewport, accounting for padding */
-  max-width: 800px; /* Increased max-width */
+  width: calc(100vw - 20px); /* Ensure it fits within the viewport, accounting for padding */
+  max-width: 1000px; /* Increased max-width */
   box-sizing: border-box; /* Include padding in the width and height */
 }
 
