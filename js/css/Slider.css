@@ -62,7 +62,7 @@
 
 .slider-wrapper .image-list .image-item {
   width: 200px; /* Adjusted width */
-  height: 300px; /* Adjusted height proportionally */
+  height: auto; /* Adjusted height proportionally */
   object-fit: cover;
   display: inline-block; /* Ensure the images do not wrap */
 }
