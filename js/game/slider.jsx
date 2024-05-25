@@ -8,6 +8,7 @@ const Slider = () => {
   const [games, setGames] = useState({ slots: [], fishes: [], casinos: [], other: [] });
   const [maxScrollLeft, setMaxScrollLeft] = useState(0);
   const [maxThumbPosition, setMaxThumbPosition] = useState(0);
+  const [currentView, setCurrentView] = useState('slots'); // New state variable for toggling views
 
   useEffect(() => {
     const fetchGames = () => {
@@ -120,70 +121,46 @@ const Slider = () => {
     </React.Fragment>
   );
 
+  const toggleView = () => {
+    setCurrentView((prevView) => (prevView === 'slots' ? 'fishes' : 'slots'));
+  };
+
   return (
     <>
-    <div className="outer-container">
-      <div className="container">
-        <div className="slider-wrapper">
-          <button id="prev-slide" className="slide-button" onClick={() => handleSlide(-1)}>
-            &lt;
-          </button>
-          <ul className="image-list" ref={imageListRef}>
-            {games.slots.map(renderGameItem)}
-          </ul>
-          <button id="next-slide" className="slide-button" onClick={() => handleSlide(1)}>
-            &gt;
-          </button>
-        </div>
-        <div className="slider-scrollbar">
-          <div className="scrollbar-track">
-            <div
-              className="scrollbar-thumb"
-              ref={scrollbarThumbRef}
-              onMouseDown={(e) => {
-                e.preventDefault();
-                handleScrollbarThumbDrag(e);
-              }}
-              onTouchStart={(e) => {
-                e.preventDefault();
-                handleScrollbarThumbDrag(e);
-              }}
-            ></div>
+      <button onClick={toggleView} className="toggle-button">
+        {currentView === 'slots' ? 'Show Fishes' : 'Show Slots'}
+      </button>
+      <div className="outer-container">
+        <div className="container">
+          <div className="slider-wrapper">
+            <button id="prev-slide" className="slide-button" onClick={() => handleSlide(-1)}>
+              &lt;
+            </button>
+            <ul className="image-list" ref={imageListRef}>
+              {currentView === 'slots' ? games.slots.map(renderGameItem) : games.fishes.map(renderGameItem)}
+            </ul>
+            <button id="next-slide" className="slide-button" onClick={() => handleSlide(1)}>
+              &gt;
+            </button>
+          </div>
+          <div className="slider-scrollbar">
+            <div className="scrollbar-track">
+              <div
+                className="scrollbar-thumb"
+                ref={scrollbarThumbRef}
+                onMouseDown={(e) => {
+                  e.preventDefault();
+                  handleScrollbarThumbDrag(e);
+                }}
+                onTouchStart={(e) => {
+                  e.preventDefault();
+                  handleScrollbarThumbDrag(e);
+                }}
+              ></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div className="outer-container">
-      <div className="container">
-        <div className="slider-wrapper">
-          <button id="prev-slide" className="slide-button" onClick={() => handleSlide(-1)}>
-            &lt;
-          </button>
-          <ul className="image-list" ref={imageListRef}>
-            {games.fishes.map(renderGameItem)}
-          </ul>
-          <button id="next-slide" className="slide-button" onClick={() => handleSlide(1)}>
-            &gt;
-          </button>
-        </div>
-        <div className="slider-scrollbar">
-          <div className="scrollbar-track">
-            <div
-              className="scrollbar-thumb"
-              ref={scrollbarThumbRef}
-              onMouseDown={(e) => {
-                e.preventDefault();
-                handleScrollbarThumbDrag(e);
-              }}
-              onTouchStart={(e) => {
-                e.preventDefault();
-                handleScrollbarThumbDrag(e);
-              }}
-            ></div>
-          </div>
-        </div>
-      </div>
-    </div>
     </>
   );
 };
