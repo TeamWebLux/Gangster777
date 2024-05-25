@@ -124,14 +124,14 @@ const Slider = () => {
     <div className="outer-container">
       <div className="container">
         <div className="slider-wrapper">
-          <button id="prev-slide" className="slide-button material-symbols-rounded" onClick={() => handleSlide(-1)}>
-            ←
+          <button id="prev-slide" className="slide-button" onClick={() => handleSlide(-1)}>
+            &lt;
           </button>
           <ul className="image-list" ref={imageListRef}>
             {games.slots.map(renderGameItem)}
           </ul>
-          <button id="next-slide" className="slide-button material-symbols-rounded" onClick={() => handleSlide(1)}>
-            →
+          <button id="next-slide" className="slide-button" onClick={() => handleSlide(1)}>
+            &gt;
           </button>
         </div>
         <div className="slider-scrollbar">
