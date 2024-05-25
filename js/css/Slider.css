@@ -1,7 +1,7 @@
 .outer-container {
   position: relative;
   padding: 20px; /* Padding around the container */
-  background-image: url('your-background-image.jpg'); /* Replace with your image path */
+  background-image: url('/gangster_assets/cards/slider-bg.webp'); /* Replace with your image path */
   background-size: cover; /* Ensures the entire image is visible */
   background-repeat: no-repeat; /* Prevents repeating the background image */
   background-position: center; /* Centers the background image */
