@@ -121,6 +121,7 @@ const Slider = () => {
   );
 
   return (
+    <>
     <div className="outer-container">
       <div className="container">
         <div className="slider-wrapper">
@@ -152,6 +153,38 @@ const Slider = () => {
         </div>
       </div>
     </div>
+    <div className="outer-container">
+      <div className="container">
+        <div className="slider-wrapper">
+          <button id="prev-slide" className="slide-button" onClick={() => handleSlide(-1)}>
+            &lt;
+          </button>
+          <ul className="image-list" ref={imageListRef}>
+            {games.slots.map(renderGameItem)}
+          </ul>
+          <button id="next-slide" className="slide-button" onClick={() => handleSlide(1)}>
+            &gt;
+          </button>
+        </div>
+        <div className="slider-scrollbar">
+          <div className="scrollbar-track">
+            <div
+              className="scrollbar-thumb"
+              ref={scrollbarThumbRef}
+              onMouseDown={(e) => {
+                e.preventDefault();
+                handleScrollbarThumbDrag(e);
+              }}
+              onTouchStart={(e) => {
+                e.preventDefault();
+                handleScrollbarThumbDrag(e);
+              }}
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </>
   );
 };
 
