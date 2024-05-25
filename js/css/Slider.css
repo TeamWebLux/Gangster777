@@ -1,7 +1,7 @@
 .view-selector {
   position: fixed;
   bottom: 250px; /* Adjust as needed */
-  right: 20px; /* Adjust as needed */
+  right: 120px; /* Adjust as needed */
   display: flex;
   flex-direction: column; /* Arrange buttons vertically */
   gap: 10px;
@@ -17,7 +17,7 @@
   font-size: 1rem;
   box-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 15px #00f; /* Glowing effect */
   animation: glowing 1.5s infinite alternate; /* Apply animation */
-  transition: background-color 0.3s ease;
+  transition: background-color  0.3s ease;
 }
 
 .view-button:hover {
@@ -30,7 +30,7 @@
 }
 
 @keyframes glowing {
-  0% { box-shadow: 0  0 5px #00f, 0 0 10px #00f, 0 0 15px #00f; }
+  0% { box-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 15px #00f; }
   100% { box-shadow: 0 0 10px #0ff, 0 0 15px #0ff, 0 0 20px #0ff; }
 }
 
@@ -246,3 +246,4 @@
   display: inline-block;
   width: 0px;
 }
+
