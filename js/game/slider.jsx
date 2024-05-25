@@ -121,21 +121,18 @@ const Slider = () => {
     </React.Fragment>
   );
 
-  const toggleView = () => {
-    const views = ['slots', 'fishes', 'casinos', 'other'];
-    const currentIndex = views.indexOf(currentView);
-    const nextIndex = (currentIndex + 1) % views.length;
-    setCurrentView(views[nextIndex]);
+  const handleViewChange = (view) => {
+    setCurrentView(view);
   };
 
   return (
     <>
-      <button onClick={toggleView} className="toggle-button">
-        {currentView === 'slots' && 'Show Fishes'}
-        {currentView === 'fishes' && 'Show Casinos'}
-        {currentView === 'casinos' && 'Show Other'}
-        {currentView === 'other' && 'Show Slots'}
-      </button>
+      <div className="view-selector">
+        <button onClick={() => handleViewChange('slots')} className={`view-button ${currentView === 'slots' ? 'active' : ''}`}>Slots</button>
+        <button onClick={() => handleViewChange('fishes')} className={`view-button ${currentView === 'fishes' ? 'active' : ''}`}>Fishes</button>
+        <button onClick={() => handleViewChange('casinos')} className={`view-button ${currentView === 'casinos' ? 'active' : ''}`}>Casinos</button>
+        <button onClick={() => handleViewChange('other')} className={`view-button ${currentView === 'other' ? 'active' : ''}`}>Other</button>
+      </div>
       <div className="outer-container">
         <div className="container">
           <div className="slider-wrapper">
