@@ -107,8 +107,8 @@ const Slider = () => {
   }, [maxScrollLeft, maxThumbPosition]);
 
   const renderGameItem = (game) => (
-    <>
-      <div key={game.id} className="image-item-container">
+    <React.Fragment key={game.id}>
+      <div className="image-item-container">
         <a href={game.url} className="image-item">
           <div className="overlay-image">
             <img src="/gangster_assets/cards/test.png" alt="Overlay" />
@@ -116,8 +116,8 @@ const Slider = () => {
           </div>
         </a>
       </div>
-      <div key={game.id + "-gap"} className="image-item-gap"></div>
-    </>
+      <div className="image-item-gap"></div>
+    </React.Fragment>
   );
 
   return (
