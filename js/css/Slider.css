@@ -10,7 +10,7 @@
 
 .slider-wrapper {
   position: relative;
-  background-image: url('your-background-image.jpg'); /* Replace with your image path */
+  background-image: url('/gangster_assets/cards/slider-bg.webp'); /* Replace with your image path */
   background-size: cover; /* Ensures the image covers the entire area */
   background-position: center; /* Centers the background image */
   border-radius: 10px; /* Sets the border radius */
