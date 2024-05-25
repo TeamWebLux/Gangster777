@@ -7,21 +7,25 @@
   background-position: center; /* Centers the background image */
   border-radius: 20px; /* Sets the border radius */
   border: 2px solid #ccc; /* Adds a border */
+  width: 100%;
+  max-width: 1200px; /* Ensure it doesn't overflow the viewport */
+  margin: auto; /* Center the outer container */
+  box-sizing: border-box; /* Include padding in the width and height */
 }
 
 .container {
-  position: absolute;
-  right: 100px;
-  bottom: 200px;
-  max-width: 1200px;
-  width: 60%;
-  margin: 20px;
+  position: relative; /* Ensure it's positioned within outer-container */
+  max-width: 100%; /* Ensure it doesn't overflow the outer-container */
+  width: 100%;
+  margin: 20px 0; /* Margin on top and bottom */
   overflow: hidden; /* Prevents scrolling on Y-axis */
   border-radius: 10px; /* Sets the border radius */
+  background-color: rgba(255, 255, 255, 0.8); /* Optional: add a semi-transparent background for better visibility */
 }
 
 .slider-wrapper {
   position: relative;
+  padding: 10px; /* Optional: Add padding */
 }
 
 .slider-wrapper .slide-button {
