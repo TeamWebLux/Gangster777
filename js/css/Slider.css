@@ -2,15 +2,15 @@
   position: fixed; /* Fixes the position relative to the viewport */
   bottom: 10px; /* Distance from the bottom of the viewport */
   right: 10px; /* Distance from the right of the viewport */
-  padding: 10px; /* Padding around the container */
+  padding: 15px; /* Increased padding around the container */
   background-image: url('/gangster_assets/cards/slider-bg.webp'); /* Replace with your image path */
   background-size: cover; /* Ensures the entire image is visible */
   background-repeat: no-repeat; /* Prevents repeating the background image */
   background-position: center; /* Centers the background image */
-  border-radius: 10px; /* Sets the border radius */
+  border-radius: 15px; /* Sets the border radius */
   border: 2px solid #ccc; /* Adds a border */
-  width: calc(100vw - 20px); /* Ensure it fits within the viewport, accounting for padding */
-  max-width: 600px; /* Ensure it doesn't overflow the viewport */
+  width: calc(100vw - 30px); /* Ensure it fits within the viewport, accounting for padding */
+  max-width: 800px; /* Increased max-width */
   box-sizing: border-box; /* Include padding in the width and height */
 }
 
@@ -18,15 +18,15 @@
   position: relative; /* Ensure it's positioned within outer-container */
   max-width: 100%; /* Ensure it doesn't overflow the outer-container */
   width: 100%;
-  margin: 10px 0; /* Margin on top and bottom */
+  margin: 15px 0; /* Increased margin on top and bottom */
   overflow: hidden; /* Prevents scrolling on Y-axis */
-  border-radius: 5px; /* Sets the border radius */
+  border-radius: 10px; /* Sets the border radius */
   /* background-color: rgba(255, 255, 255, 0.8); Optional: add a semi-transparent background for better visibility */
 }
 
 .slider-wrapper {
   position: relative;
-  padding: 5px; /* Optional: Add padding */
+  padding: 10px; /* Increased padding */
 }
 
 .slider-wrapper .slide-button {
@@ -34,13 +34,13 @@
   top: 50%;
   outline: none;
   border: none;
-  height: 25px;
-  width: 25px;
+  height: 35px;
+  width: 35px;
   z-index: 5;
   color: #fff;
   display: flex;
   cursor: pointer;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   background: #000;
   align-items: center;
   justify-content: center;
@@ -53,20 +53,20 @@
 }
 
 .slider-wrapper .slide-button#prev-slide {
-  left: -12.5px;
+  left: -17.5px;
   display: none;
 }
 
 .slider-wrapper .slide-button#next-slide {
-  right: -12.5px;
+  right: -17.5px;
 }
 
 .slider-wrapper .image-list {
   display: flex;
-  gap: 9px;
+  gap: 12px;
   font-size: 0;
   list-style: none;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   overflow-x: auto;
   white-space: nowrap;
   scrollbar-width: none;
@@ -78,14 +78,14 @@
 }
 
 .slider-wrapper .image-list .image-item {
-  width: 100px;
+  width: 150px; /* Increased width */
   height: auto;
   object-fit: cover;
   display: inline-block;
 }
 
 .container .slider-scrollbar {
-  height: 24px; /* Increased height */
+  height: 30px; /* Increased height */
   width: 100%;
   display: flex;
   align-items: center;
@@ -94,15 +94,15 @@
 .slider-scrollbar .scrollbar-track {
   background: rgb(0, 0, 0);
   width: 100%;
-  height: 2px; /* Increased height */
+  height: 3px; /* Increased height */
   display: flex;
   align-items: center;
-  border-radius: 2px;
+  border-radius: 3px;
   position: relative;
 }
 
 .slider-scrollbar:hover .scrollbar-track {
-  height: 4px; /* Increased height */
+  height: 6px; /* Increased height */
 }
 
 .slider-scrollbar .scrollbar-thumb {
@@ -110,7 +110,7 @@
   background: rgb(255, 255, 255);
   top: 0;
   bottom: 0;
-  width: 25%;
+  width: 35%; /* Increased width */
   height: 100%;
   cursor: grab;
   border-radius: inherit;
@@ -144,25 +144,25 @@
   }
 
   .slider-wrapper .image-list {
-    gap: 5px;
-    margin-bottom: 7.5px;
+    gap: 7px;
+    margin-bottom: 10px;
     scroll-snap-type: x mandatory;
   }
 
   .slider-wrapper .image-list .image-item {
-    width: 70px;
+    width: 100px; /* Increased width */
     height: auto; /* Adjusted height proportionally */
   }
 
   .slider-scrollbar .scrollbar-thumb {
-    width: 10%;
+    width: 15%; /* Increased width */
   }
 }
 
 .image-item-container {
   position: relative;
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 15px; /* Increased margin */
   user-select: none;
 }
 
@@ -181,15 +181,15 @@
 .overlay-image img:first-child {
   position: relative;
   z-index: 1;
-  width: 100px;
+  width: 150px; /* Increased width */
   height: auto;
   user-select: none;
 }
 
 .overlay-image .game-image {
   position: absolute;
-  left: 5px;
-  width: 75px;
+  left: 7px; /* Adjusted position */
+  width: 100px; /* Increased width */
   height: auto;
   object-fit: cover;
   z-index: 0;
