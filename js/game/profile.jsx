@@ -29,8 +29,8 @@ const Text = styled.div`
 `;
 
 const Username = styled(Text)`
-  top: 10%;
-  font-size: 18px;
+  top: 40%;
+  font-size: 28px;
 
   @media (max-width: 600px) {
     font-size: 16px;
