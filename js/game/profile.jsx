@@ -13,10 +13,16 @@ const Container = styled.div`
   }
 `;
 
+const ClickableArea = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+`;
+
 const Image = styled.img`
   width: 100%;
   height: auto;
-  cursor: pointer;
 `;
 
 const Text = styled.div`
@@ -95,9 +101,11 @@ const ProfileImage = ({ username, balance }) => {
   return (
     <>
       <Container>
-        <Image src="/gangster_assets/profile/profile-card.png" alt="Profile" onClick={handleImageClick} />
-        <Username>{username}</Username>
-        <Balance>${balance}</Balance>
+        <ClickableArea onClick={handleImageClick}>
+          <Image src="/gangster_assets/profile/profile-card.png" alt="Profile" />
+          <Username>{username}</Username>
+          <Balance>${balance}</Balance>
+        </ClickableArea>
       </Container>
       {isModalOpen && (
         <Modal>
