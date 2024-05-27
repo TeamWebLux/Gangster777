@@ -42,9 +42,7 @@ const Dashboard = ({ message }) => {
 
   return (
     <>
-    <div>
-      <ProfileImage username="Gangster" balance="123" />
-    </div>
+   
     <div className="dashboard-container">
       // <h1 style={{ color: 'white' }}>{message}</h1>
       <img
@@ -63,7 +61,9 @@ const Dashboard = ({ message }) => {
   }}
 />
 
-
+ <div>
+      <ProfileImage username="Gangster" balance="123" />
+    </div>
 
 
 <CowBoyCard />
