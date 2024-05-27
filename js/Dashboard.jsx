@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './css/Dashboard.css';
 import CowBoyCard from './cowboysGold/cowboy';
 import Slider from './game/slider';
+import ProfileImage from './game/profile';
 const Dashboard = ({ message }) => {
   const [showVideo, setShowVideo] = useState(false);
   const videoRef = useRef(null);
@@ -57,6 +58,7 @@ const Dashboard = ({ message }) => {
     marginRight: '20px' 
   }}
 />
+<ProfileImage />
 <CowBoyCard />
 <Slider />
       <div>
