@@ -247,7 +247,7 @@
 }
 .game-image{
   position: relative;
-  top: 40px;
+  top: 40px !important;
   width: 130px !important;
   height: 200px !important;
 }
