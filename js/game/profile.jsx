@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const Container = styled.div`
   position: absolute;
@@ -54,13 +54,22 @@ const Balance = styled(Text)`
   }
 `;
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
 const Modal = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: url('/gangster_assets/profile/Profile.webp') no-repeat center center fixed;
+  background: url('/mnt/data/login_page_bg_light.png') no-repeat center center fixed;
   background-size: cover;
   color: gold;
   border: 2px solid gold;
@@ -71,6 +80,7 @@ const Modal = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  animation: ${fadeIn} 0.5s ease-in-out;
 `;
 
 const CloseButton = styled.button`
