@@ -1,47 +1,58 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: auto;
+
+  @media (max-width: 600px) {
+    width: 150px;
+  }
+`;
+
+const Image = styled.img`
+  width: 100%;
+  height: auto;
+`;
+
+const Text = styled.div`
+  position: absolute;
+  color: gold;
+  text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 15px gold;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+`;
+
+const Username = styled(Text)`
+  top: 10%;
+  font-size: 18px;
+
+  @media (max-width: 600px) {
+    font-size: 16px;
+  }
+`;
+
+const Balance = styled(Text)`
+  bottom: 10%;
+  font-size: 16px;
+
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
+`;
 
 const ProfileImage = ({ username, balance }) => {
-  const containerStyle = {
-    position: 'absolute',  // Make sure the container is absolutely positioned
-    top: 0,
-    left: 0,
-    width: '200px',  // Increased the width
-    height: 'auto'
-  };
-
-  const imageStyle = {
-    width: '100%',
-    height: 'auto'
-  };
-
-  const textStyle = {
-    position: 'absolute',
-    color: 'gold',
-    textShadow: '0 0 5px gold, 0 0 10px gold, 0 0 15px gold',
-    fontFamily: '"Courier New", Courier, monospace', // Replace this with a gangster-themed font if you have one
-    fontWeight: 'bold',
-    textAlign: 'center',
-    width: '100%'
-  };
-
-  const usernameStyle = {
-    ...textStyle,
-    top: '10%',
-    fontSize: '18px'  // Increased the font size
-  };
-
-  const balanceStyle = {
-    ...textStyle,
-    bottom: '10%',
-    fontSize: '16px'  // Increased the font size
-  };
-
   return (
-    <div style={containerStyle}>
-      <img src="/gangster_assets/profile/profile-card.png" alt="Profile" style={imageStyle} />
-      <div style={usernameStyle}>{username}</div>
-      <div style={balanceStyle}>${balance}</div>
-    </div>
+    <Container>
+      <Image src="/gangster_assets/profile/profile-card.png" alt="Profile" />
+      <Username>{username}</Username>
+      <Balance>${balance}</Balance>
+    </Container>
   );
 };
 
