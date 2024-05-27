@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles';
 
 const Container = styled.div`
   position: absolute;
@@ -114,15 +113,6 @@ const ProfileImage = ({ username, balance }) => {
     setIsModalOpen(false);
   };
 
-  const particlesInit = async (main) => {
-    // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
-    await loadFull(main);
-  };
-
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
-
   return (
     <>
       <Container>
@@ -136,8 +126,6 @@ const ProfileImage = ({ username, balance }) => {
         <Modal>
           <Particles
             id="tsparticles"
-            init={particlesInit}
-            loaded={particlesLoaded}
             options={{
               background: {
                 color: {
@@ -145,12 +133,6 @@ const ProfileImage = ({ username, balance }) => {
                 },
               },
               fpsLimit: 60,
-              interactivity: {
-                detectsOn: "canvas",
-                events: {
-                  resize: true,
-                },
-              },
               particles: {
                 color: {
                   value: "#ffffff",
