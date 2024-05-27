@@ -124,7 +124,6 @@ const ProfileImage = ({ username, balance }) => {
       {isModalOpen && (
         <Modal>
           <CloseButton onClick={handleCloseModal}>Close</CloseButton>
-        
         </Modal>
       )}
     </>
