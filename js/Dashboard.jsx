@@ -61,7 +61,7 @@ const Dashboard = ({ message }) => {
 
 
 
-<ProfileImage />
+<ProfileImage  username="Gangster" balance="123" />
 
 
 <CowBoyCard />
