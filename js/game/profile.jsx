@@ -20,7 +20,7 @@ const ProfileImage = ({ username, balance }) => {
     textShadow: '0 0 5px gold, 0 0 10px gold, 0 0 15px gold',
     fontFamily: '"Courier New", Courier, monospace', // Replace this with a gangster-themed font if you have one
     fontWeight: 'bold',
-    textAlign: 'center',
+    // textAlign: 'center',
     width: '100%'
   };
 
