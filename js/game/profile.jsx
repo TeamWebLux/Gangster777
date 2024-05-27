@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProfileImage = ({ src, height, width }) => {
+const ProfileImage = ({ height, width }) => {
   const imageStyle = {
     position: 'absolute',
     top: 0,
@@ -11,7 +11,7 @@ const ProfileImage = ({ src, height, width }) => {
 
   return (
     <div>
-      <img src={src} alt="Profile" style={imageStyle} />
+      <img src="/gangster_assets/profile/profile-card.png" alt="Profile" style={imageStyle} />
     </div>
   );
 };
