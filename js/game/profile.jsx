@@ -56,6 +56,15 @@ const Balance = styled(Text)`
   }
 `;
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
 const Modal = styled.div`
   position: fixed;
   top: 0;
@@ -73,7 +82,7 @@ const Modal = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: fadeIn 0.5s ease-in-out;
+  animation: ${fadeIn} 0.5s ease-in-out;
 `;
 
 const CloseButton = styled.button`
