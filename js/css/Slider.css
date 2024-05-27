@@ -44,7 +44,7 @@
   background-repeat: no-repeat; /* Prevents repeating the background image */
   background-position: center; /* Centers the background image */
   border-radius: 15px; /* Sets the border radius */
-  border: 4px solid #2c2c2c; /* Adds a border */
+  border: 4px solid #fff; /* Adds a border */
   width: calc(100vw - 20px); /* Ensure it fits within the viewport, accounting for padding */
   max-width: 1000px; /* Increased max-width */
   box-sizing: border-box; /* Include padding in the width and height */
