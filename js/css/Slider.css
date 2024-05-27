@@ -246,6 +246,7 @@
   width: 0px;
 }
 .game-image{
+  top: 20px;
   width: 130px !important;
   height: 200px !important;
 }
