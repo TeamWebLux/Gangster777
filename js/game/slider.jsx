@@ -113,7 +113,7 @@ const Slider = () => {
       <div className="image-item-container">
         <a href={game.url} className="image-item">
           <div className="overlay-image">
-            <img src="/gangster_assets/cards/card.png" alt="Overlay" />
+            <img src="/gangster_assets/cards/card.png" className="game-image-cover" alt="Overlay" />
             <img src={game.src} alt={`img-${game.id}`} className="game-image" />
           </div>
         </a>
