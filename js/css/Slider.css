@@ -233,7 +233,7 @@
 
 .overlay-image .game-image {
   position: absolute;
-  left: 7px; /* Adjusted position */
+  left: 14px; /* Adjusted position */
   width: 100px; /* Increased width */
   height: auto;
   object-fit: cover;
