@@ -60,7 +60,7 @@ const Modal = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: url('/gangster_assets/profile/Profile.webp') no-repeat center center fixed;  // Update the path to your background image
+  background: url('/mnt/data/login_page_bg_light.png') no-repeat center center fixed;
   background-size: cover;
   color: gold;
   border: 2px solid gold;
