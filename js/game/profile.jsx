@@ -56,17 +56,21 @@ const Balance = styled(Text)`
 
 const Modal = styled.div`
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  max-width: 500px;
-  background: #333;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('/gangster_assets/profile/Profile.webp') no-repeat center center fixed;  // Update the path to your background image
+  background-size: cover;
   color: gold;
   border: 2px solid gold;
   z-index: 1000;
   padding: 20px;
   box-shadow: 0 0 10px gold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 const CloseButton = styled.button`
