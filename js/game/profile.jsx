@@ -1,12 +1,12 @@
 import React from 'react';
 
-const ProfileImage = ({ height, width }) => {
+const ProfileImage = () => {
   const imageStyle = {
     position: 'absolute',
     top: 0,
     left: 0,
-    height: height,
-    width: width
+    height: 100,
+    width: 100
   };
 
   return (
