@@ -49,7 +49,11 @@
   box-sizing: border-box; /* Include padding in the width and height */
   transition: opacity 0.5s ease, transform 0.5s ease;
   opacity: 1;
-  box-shadow: 5px 5px 15px #ff6f3f, 10px 10px 20px #ffb84d; /* Glowing effect at right and bottom */
+  box-shadow: 
+    5px 5px 10px rgba(255, 111, 63, 0.8), 
+    10px 10px 20px rgba(255, 140, 0, 0.6),
+    15px 15px 30px rgba(255, 180, 77, 0.4),
+    20px 20px 40px rgba(255, 215, 0, 0.2); /* Fire-like glowing effect */
 }
 
 
