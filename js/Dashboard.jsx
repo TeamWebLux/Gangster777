@@ -61,9 +61,9 @@ const Dashboard = ({ message }) => {
   }}
 />
 
- <div>
+  <div>
       <ProfileImage username="Gangster" balance="123" />
-    </div>
+  </div>
 
 
 <CowBoyCard />
