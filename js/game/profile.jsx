@@ -38,7 +38,7 @@ const Username = styled(Text)`
 `;
 
 const Balance = styled(Text)`
-  top: 10%;
+  top: 30%;
   left:25%;
   font-size: 20px;
 
