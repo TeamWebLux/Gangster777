@@ -58,9 +58,20 @@ const Dashboard = ({ message }) => {
     marginRight: '20px' 
   }}
 />
+
+
+
 <ProfileImage />
+
+
 <CowBoyCard />
+
+
+
 <Slider />
+
+
+
       <div>
         {showVideo && (
           <div className="video-overlay">
