@@ -124,8 +124,7 @@ const ProfileImage = ({ username, balance }) => {
       {isModalOpen && (
         <Modal>
           <CloseButton onClick={handleCloseModal}>Close</CloseButton>
-          <h2>Gangster Themed Content</h2>
-          <p>This is the content inside the modal window.</p>
+        
         </Modal>
       )}
     </>
