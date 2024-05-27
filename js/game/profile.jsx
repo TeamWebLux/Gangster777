@@ -30,7 +30,7 @@ const Text = styled.div`
 
 const Username = styled(Text)`
   top: 50%;
-  font-size: 28px;
+  font-size: 22px;
 
   @media (max-width: 600px) {
     font-size: 16px;
@@ -38,7 +38,8 @@ const Username = styled(Text)`
 `;
 
 const Balance = styled(Text)`
-  bottom: 10%;
+  top: 10%;
+  left:
   font-size: 16px;
 
   @media (max-width: 600px) {
