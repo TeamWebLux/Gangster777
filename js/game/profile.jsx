@@ -5,8 +5,8 @@ const ProfileImage = () => {
     position: 'absolute',
     top: 0,
     left: 0,
-    height: '200px',
-    width: '400px'  
+    height: '160px',
+    width: 'auto'  
   };
 
   return (
