@@ -2,16 +2,16 @@ import React from 'react';
 
 const ProfileImage = ({ username, balance }) => {
   const containerStyle = {
-    position: 'relative',
-    display: 'inline-block'
+    position: 'absolute',  // Make sure the container is absolutely positioned
+    top: 0,
+    left: 0,
+    width: '160px',
+    height: 'auto'
   };
 
   const imageStyle = {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    height: '160px',
-    width: 'auto'
+    width: '100%',
+    height: 'auto'
   };
 
   const textStyle = {
@@ -20,7 +20,7 @@ const ProfileImage = ({ username, balance }) => {
     textShadow: '0 0 5px gold, 0 0 10px gold, 0 0 15px gold',
     fontFamily: '"Courier New", Courier, monospace', // Replace this with a gangster-themed font if you have one
     fontWeight: 'bold',
-    // textAlign: 'center',
+    textAlign: 'center',
     width: '100%'
   };
 
