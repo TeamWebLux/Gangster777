@@ -5,7 +5,7 @@ const ProfileImage = ({ username, balance }) => {
     position: 'absolute',  // Make sure the container is absolutely positioned
     top: 0,
     left: 0,
-    width: '160px',
+    width: '200px',  // Increased the width
     height: 'auto'
   };
 
@@ -27,13 +27,13 @@ const ProfileImage = ({ username, balance }) => {
   const usernameStyle = {
     ...textStyle,
     top: '10%',
-    fontSize: '14px'
+    fontSize: '18px'  // Increased the font size
   };
 
   const balanceStyle = {
     ...textStyle,
     bottom: '10%',
-    fontSize: '12px'
+    fontSize: '16px'  // Increased the font size
   };
 
   return (
