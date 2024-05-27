@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
+import Particles from 'react-tsparticles';
+import { loadFull } from 'tsparticles';
 
 const Container = styled.div`
   position: absolute;
@@ -54,15 +56,6 @@ const Balance = styled(Text)`
   }
 `;
 
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
-
 const Modal = styled.div`
   position: fixed;
   top: 0;
@@ -80,7 +73,7 @@ const Modal = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: ${fadeIn} 0.5s ease-in-out;
+  animation: fadeIn 0.5s ease-in-out;
 `;
 
 const CloseButton = styled.button`
@@ -112,6 +105,15 @@ const ProfileImage = ({ username, balance }) => {
     setIsModalOpen(false);
   };
 
+  const particlesInit = async (main) => {
+    // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
+    await loadFull(main);
+  };
+
+  const particlesLoaded = (container) => {
+    console.log(container);
+  };
+
   return (
     <>
       <Container>
@@ -123,6 +125,66 @@ const ProfileImage = ({ username, balance }) => {
       </Container>
       {isModalOpen && (
         <Modal>
+          <Particles
+            id="tsparticles"
+            init={particlesInit}
+            loaded={particlesLoaded}
+            options={{
+              background: {
+                color: {
+                  value: "#000000",
+                },
+              },
+              fpsLimit: 60,
+              interactivity: {
+                detectsOn: "canvas",
+                events: {
+                  resize: true,
+                },
+              },
+              particles: {
+                color: {
+                  value: "#ffffff",
+                },
+                links: {
+                  color: "#ffffff",
+                  distance: 150,
+                  enable: true,
+                  opacity: 0.5,
+                  width: 1,
+                },
+                collisions: {
+                  enable: true,
+                },
+                move: {
+                  direction: "none",
+                  enable: true,
+                  outMode: "bounce",
+                  random: false,
+                  speed: 2,
+                  straight: false,
+                },
+                number: {
+                  density: {
+                    enable: true,
+                    area: 800,
+                  },
+                  value: 80,
+                },
+                opacity: {
+                  value: 0.5,
+                },
+                shape: {
+                  type: "circle",
+                },
+                size: {
+                  random: true,
+                  value: 5,
+                },
+              },
+              detectRetina: true,
+            }}
+          />
           <CloseButton onClick={handleCloseModal}>Close</CloseButton>
           <h2>Gangster Themed Content</h2>
           <p>This is the content inside the modal window.</p>
