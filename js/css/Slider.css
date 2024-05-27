@@ -239,6 +239,7 @@
   object-fit: cover;
   z-index: 0;
   user-select: none;
+  margin-left: 100px;
 }
 
 .image-item-gap {
