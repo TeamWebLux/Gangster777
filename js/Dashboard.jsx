@@ -1,17 +1,29 @@
 import React, { useState, useEffect, useRef } from 'react';
-// import GameComponent from './game/game';
 import './css/Dashboard.css';
 import CowBoyCard from './cowboysGold/cowboy';
 import Slider from './game/slider';
 import ProfileImage from './game/profile';
+
 const Dashboard = ({ message }) => {
   const [showVideo, setShowVideo] = useState(false);
   const videoRef = useRef(null);
-  const isMounted = useRef(true);
+  const [balance, setBalance] = useState('');
+  const [username, setUsername] = useState('');
 
   useEffect(() => {
-    isMounted.current = true;
+    // Retrieve balance and username from the root element's attributes
+    const rootElement = document.getElementById('root');
+    if (rootElement) {
+      const balanceAttribute = rootElement.getAttribute('balance');
+      const usernameAttribute = rootElement.getAttribute('username');
+      if (balanceAttribute && usernameAttribute) {
+        setBalance(balanceAttribute);
+        setUsername(usernameAttribute);
+      }
+    }
+  }, []);
 
+  useEffect(() => {
     // Check if the video has been viewed
     const videoViewed = localStorage.getItem('videoViewed');
     if (!videoViewed) {
@@ -24,10 +36,6 @@ const Dashboard = ({ message }) => {
         console.error('Error attempting to play video:', error);
       });
     }
-
-    return () => {
-      isMounted.current = false;
-    };
   }, []);
 
   const handleVideoEnd = () => {
@@ -41,38 +49,27 @@ const Dashboard = ({ message }) => {
   };
 
   return (
-    <>
-   
     <div className="dashboard-container">
-      // <h1 style={{ color: 'white' }}>{message}</h1>
       <img
-  src="/gangster_assets/exit_btn.png" 
-  alt="Logout"
-  onClick={handleLogout}
- style={{
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    width: '100px', 
-    height: 'auto',
-    cursor: 'pointer',
-    marginTop: '20px', 
-    marginRight: '20px' 
-  }}
-/>
+        src="/gangster_assets/exit_btn.png"
+        alt="Logout"
+        onClick={handleLogout}
+        style={{
+          position: 'absolute',
+          top: 0,
+          right: 0,
+          width: '100px',
+          height: 'auto',
+          cursor: 'pointer',
+          marginTop: '20px',
+          marginRight: '20px',
+        }}
+      />
 
-  <div>
-      <ProfileImage username="Gangster" balance="123" />
-  </div>
+      <ProfileImage username={username} balance={balance} />
 
-
-<CowBoyCard />
-
-
-
-<Slider />
-
-
+      <CowBoyCard />
+      <Slider />
 
       <div>
         {showVideo && (
@@ -91,7 +88,6 @@ const Dashboard = ({ message }) => {
         )}
       </div>
     </div>
-    </>
   );
 };
 
