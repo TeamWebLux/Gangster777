@@ -147,7 +147,7 @@ class LoginWin extends Component {
     src="/gangster_assets/login-btn.png"
     alt="Login"
     onClick={this.handleSubmit}
-    style={{ width: '150px', height: '100px' }}
+    style={{ width: '180px', height: '120px' }}
 />
 
 
