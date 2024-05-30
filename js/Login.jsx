@@ -144,7 +144,7 @@ class LoginWin extends Component {
                                 </div>
                                 <img
     className="login-button"
-    src="/gangster_assets/login_btn.png"
+    src="/gangster_assets/login-btn.png"
     alt="Login"
     onClick={this.handleSubmit}
 />
