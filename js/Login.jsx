@@ -1,23 +1,16 @@
 import React, { Component } from 'react';
 import { post } from './api/server';
-import './css/LoginWin.css';
+import './css/Login.css';
 
 class LoginWin extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            backgroundImageIndex: 0,
-            backgroundImages: [
-                '/gangster_assets/login_page_bg.png',
-                '/gangster_assets/login_page_bg_car_light.png',
-                '/gangster_assets/login_page_bg_home_light.png',
-                '/gangster_assets/login_page_bg_light.png'
-            ],
-            imagesLoaded: false,
+            videoUrl: '/magicslot_asset/Preloader_assets/preloaderv.mp4', // Add your video URL here
             username: '',
             password: '',
             rememberMe: true,
-            loginButtonImage: '/gangster_assets/login-btn.png', // Initial button image
+            videoLoaded: false // Track video loading status
         };
         this._isMounted = false;
         this.loadRememberMeSettings();
@@ -25,30 +18,10 @@ class LoginWin extends Component {
 
     componentDidMount() {
         this._isMounted = true;
-        this.loadImages();
-        this.backgroundInterval = setInterval(this.changeBackground, 2500); // Change background every 2.5 seconds
     }
 
     componentWillUnmount() {
         this._isMounted = false;
-        clearInterval(this.backgroundInterval);
-    }
-
-    loadImages = () => {
-        const { backgroundImages } = this.state;
-        let imagesLoadedCount = 0;
-        backgroundImages.forEach(src => {
-            const img = new Image();
-            img.onload = () => {
-                if (this._isMounted) {
-                    imagesLoadedCount++;
-                    if (imagesLoadedCount === backgroundImages.length) {
-                        this.setState({ imagesLoaded: true });
-                    }
-                }
-            };
-            img.src = src;
-        });
     }
 
     loadRememberMeSettings = () => {
@@ -83,17 +56,11 @@ class LoginWin extends Component {
             window.localStorage.setItem('password', password);
         }
         const token = document.getElementById('root').getAttribute('token');
-        
-        // Change the button image and wait for 3 seconds before proceeding
-        this.setState({ loginButtonImage: '/gangster_assets/login-btn-clicked.png' });
-        
-        setTimeout(() => {
-            post('/login', { username, password, _token: token }).then(() => {
-                // Perform any actions upon successful login
-            }).catch(error => {
-                console.error('Login failed:', error);
-            });
-        }, 3000);
+        post('/login', { username, password, _token: token }).then(() => {
+            // console.log("Hello")
+        }).catch(error => {
+            console.error('Login failed:', error);
+        });
     }
 
     handleKeyPress = (e) => {
@@ -102,66 +69,56 @@ class LoginWin extends Component {
         }
     }
 
-    changeBackground = () => {
-        const { backgroundImages, backgroundImageIndex } = this.state;
-        const newIndex = (backgroundImageIndex + 1) % backgroundImages.length;
-        this.setState({ backgroundImageIndex: newIndex });
+    handleVideoLoaded = () => {
+        this.setState({ videoLoaded: true });
     }
 
     render() {
-        const { backgroundImageIndex, backgroundImages, imagesLoaded, loginButtonImage } = this.state;
-        const backgroundImage = backgroundImages[backgroundImageIndex];
+        const { videoUrl, username, password, rememberMe, videoLoaded } = this.state;
+
         return (
-            <div>
-                {!imagesLoaded && (
+            <div className="login-page" style={{ position: 'relative', overflow: 'hidden', width: '100%', height: '100%' }}>
+                {!videoLoaded && (
                     <div className="preloader">
                         Loading...
                     </div>
                 )}
-                {imagesLoaded && (
-                    <div className="login-container" style={{ backgroundImage: `url(${backgroundImage})` }}>
-                        <div className="login-form">
-                            <div className="our-input-fields">
-                                <input 
-                                    id="username" 
-                                    className="login-input" 
-                                    type="text" 
-                                    placeholder="Enter Username"
-                                    value={this.state.username}
-                                    onChange={this.handleChange} 
-                                    onKeyPress={this.handleKeyPress} 
-                                />
-                                <input 
-                                    id="password" 
-                                    className="login-input" 
-                                    type="password" 
-                                    placeholder="Enter Password"
-                                    value={this.state.password}
-                                    onChange={this.handleChange} 
-                                    onKeyPress={this.handleKeyPress} 
-                                />
-                                <div className="remember-me">
-                                    <input 
-                                        id="rememberMe" 
-                                        type="checkbox" 
-                                        checked={this.state.rememberMe}
-                                        onChange={this.handleRememberMe} 
-                                    />
-                                    <label htmlFor="rememberMe">Remember Me</label>
-                                </div>
-                                <img
-                                    className="login-button"
-                                    src={loginButtonImage}
-                                    alt="Login"
-                                    onClick={this.handleSubmit}
-                                    style={{ width: '180px', height: '120px' }}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                )}
+                <video 
+                    autoPlay 
+                    muted 
+                    loop 
+                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+                    onLoadedData={this.handleVideoLoaded}
+                >
+                    <source src={videoUrl} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <div className="login-form" style={{ position: 'relative', zIndex: 1 }}>
+                    {/* Your login form elements go here */}
+                    <input
+                        type="text"
+                        value={username}
+                        onChange={(e) => this.setState({ username: e.target.value })}
+                        placeholder="Username"
+                    />
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => this.setState({ password: e.target.value })}
+                        placeholder="Password"
+                    />
+                    <label>
+                        <input
+                            type="checkbox"
+                            checked={rememberMe}
+                            onChange={(e) => this.setState({ rememberMe: e.target.checked })}
+                        />
+                        Remember Me
+                    </label>
+                    <button onClick={this.handleSubmit}>Login</button>
+                </div>
             </div>
-        )
+        );
     }
 }
 
