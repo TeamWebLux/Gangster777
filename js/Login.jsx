@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { post } from './api/server';
-import './css/LoginWin.css'; 
+import './css/LoginWin.css';
 
 class LoginWin extends Component {
     constructor(props) {
@@ -16,7 +16,8 @@ class LoginWin extends Component {
             imagesLoaded: false,
             username: '',
             password: '',
-            rememberMe: true
+            rememberMe: true,
+            loginButtonImage: '/gangster_assets/login-btn.png', // Initial button image
         };
         this._isMounted = false;
         this.loadRememberMeSettings();
@@ -82,11 +83,17 @@ class LoginWin extends Component {
             window.localStorage.setItem('password', password);
         }
         const token = document.getElementById('root').getAttribute('token');
-        post('/login', { username, password, _token: token }).then(() => {
-            // console.log("Hello")
-        }).catch(error => {
-            console.error('Login failed:', error);
-        });
+        
+        // Change the button image and wait for 3 seconds before proceeding
+        this.setState({ loginButtonImage: '/gangster_assets/login-btn-clicked.png' });
+        
+        setTimeout(() => {
+            post('/login', { username, password, _token: token }).then(() => {
+                // Perform any actions upon successful login
+            }).catch(error => {
+                console.error('Login failed:', error);
+            });
+        }, 3000);
     }
 
     handleKeyPress = (e) => {
@@ -102,7 +109,7 @@ class LoginWin extends Component {
     }
 
     render() {
-        const { backgroundImageIndex, backgroundImages, imagesLoaded } = this.state;
+        const { backgroundImageIndex, backgroundImages, imagesLoaded, loginButtonImage } = this.state;
         const backgroundImage = backgroundImages[backgroundImageIndex];
         return (
             <div>
@@ -142,16 +149,14 @@ class LoginWin extends Component {
                                     />
                                     <label htmlFor="rememberMe">Remember Me</label>
                                 </div>
-                              <img
-    className="login-button"
-    src="/gangster_assets/login-btn.png"
-    alt="Login"
-    onClick={this.handleSubmit}
-    style={{ width: '180px', height: '120px' }}
-/>
-
-
-                                 </div>
+                                <img
+                                    className="login-button"
+                                    src={loginButtonImage}
+                                    alt="Login"
+                                    onClick={this.handleSubmit}
+                                    style={{ width: '180px', height: '120px' }}
+                                />
+                            </div>
                         </div>
                     </div>
                 )}
