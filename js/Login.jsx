@@ -25,7 +25,7 @@ class LoginWin extends Component {
     componentDidMount() {
         this._isMounted = true;
         this.loadImages();
-        this.backgroundInterval = setInterval(this.changeBackground, 5000); // Change background every 5 seconds
+        this.backgroundInterval = setInterval(this.changeBackground, 2500); // Change background every 2.5 seconds
     }
 
     componentWillUnmount() {
