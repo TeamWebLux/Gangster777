@@ -8,9 +8,9 @@ class Dashboard1 extends Component {
             backgroundImageIndex: 0,
             backgroundImages: [
                 '/gangster_assets/dash1/bg.webp',
-                '/gangster_assets/dash1/bg1.png',
-                '/gangster_assets/dash1/bg2.png',
-                '/gangster_assets/dash1/bg3.png'
+                // '/gangster_assets/dash1/bg1.png',
+                // '/gangster_assets/dash1/bg2.png',
+                // '/gangster_assets/dash1/bg3.png'
             ],
             imagesLoaded: false,
         };
