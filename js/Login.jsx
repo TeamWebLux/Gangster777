@@ -18,6 +18,7 @@ class LoginWin extends Component {
             password: '',
             rememberMe: true,
             loginButtonImage: '/gangster_assets/login-btn.png', // Initial button image
+            buttonClass: '', // Additional state for button class
         };
         this._isMounted = false;
         this.loadRememberMeSettings();
@@ -95,9 +96,12 @@ class LoginWin extends Component {
             loginButton.style.pointerEvents = 'none';
         }
 
-        // After 2 seconds, change to the second clicked state
+        // After 2 seconds, change to the second clicked state and apply the hanging class
         setTimeout(() => {
-            this.setState({ loginButtonImage: '/gangster_assets/login-btn2.png' });
+            this.setState({ 
+                loginButtonImage: '/gangster_assets/login-btn2.png',
+                buttonClass: 'hanging' 
+            });
 
             // After another 2 seconds (4 seconds total), submit the form
             setTimeout(() => {
@@ -128,13 +132,13 @@ class LoginWin extends Component {
     }
 
     render() {
-        const { backgroundImageIndex, backgroundImages, imagesLoaded, loginButtonImage } = this.state;
+        const { backgroundImageIndex, backgroundImages, imagesLoaded, loginButtonImage, buttonClass } = this.state;
         const backgroundImage = backgroundImages[backgroundImageIndex];
         return (
             <div>
                 {!imagesLoaded && (
                     <div className="preloader">
-                        Loading...
+                        <div className="preloader-text">Loading...</div>
                     </div>
                 )}
                 {imagesLoaded && (
@@ -169,7 +173,7 @@ class LoginWin extends Component {
                                     <label htmlFor="rememberMe">Remember Me</label>
                                 </div>
                                 <img
-                                    className="login-button"
+                                    className={`login-button ${buttonClass}`}
                                     src={loginButtonImage}
                                     alt="Login"
                                     onClick={this.handleSubmit}
