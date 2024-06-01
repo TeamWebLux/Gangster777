@@ -23,7 +23,7 @@ const App = () => {
         setDashboardType('dash2');
       }
       //  else {
-        // setDashboardType('dash3');
+      // setDashboardType('dash3');
       // }
     }
   }, [type]);
