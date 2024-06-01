@@ -78,22 +78,41 @@ class LoginWin extends Component {
 
     handleSubmit = () => {
         const { username, password, rememberMe } = this.state;
+
         if (rememberMe) {
             window.localStorage.setItem('username', username);
             window.localStorage.setItem('password', password);
         }
+
         const token = document.getElementById('root').getAttribute('token');
-        
-        // Change the button image and wait for 3 seconds before proceeding
-        this.setState({ loginButtonImage: '/gangster_assets/login-btn-clicked.png' });
-        
+
+        // Change the button image to the first clicked state
+        this.setState({ loginButtonImage: '/gangster_assets/login-btn1.png' });
+
+        // Disable the button to prevent multiple submissions
+        const loginButton = document.querySelector('.login-button');
+        if (loginButton) {
+            loginButton.style.pointerEvents = 'none';
+        }
+
+        // After 2 seconds, change to the second clicked state
         setTimeout(() => {
-            post('/login', { username, password, _token: token }).then(() => {
-                // Perform any actions upon successful login
-            }).catch(error => {
-                console.error('Login failed:', error);
-            });
-        }, 3000);
+            this.setState({ loginButtonImage: '/gangster_assets/login-btn2.png' });
+
+            // After another 2 seconds (4 seconds total), submit the form
+            setTimeout(() => {
+                post('/login', { username, password, _token: token }).then(() => {
+                    // Perform any actions upon successful login
+                }).catch(error => {
+                    console.error('Login failed:', error);
+                }).finally(() => {
+                    // Re-enable the button after the process
+                    if (loginButton) {
+                        loginButton.style.pointerEvents = 'auto';
+                    }
+                });
+            }, 2000);
+        }, 2000);
     }
 
     handleKeyPress = (e) => {
