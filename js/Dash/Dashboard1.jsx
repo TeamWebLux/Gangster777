@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../css/dash1.css';
 
-class BackgroundAnimation extends Component {
+class Dashboard1 extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -70,4 +70,4 @@ class BackgroundAnimation extends Component {
     }
 }
 
-export default BackgroundAnimation;
+export default Dashboard1;
