@@ -7,10 +7,10 @@ class Dashboard1 extends Component {
         this.state = {
             backgroundImageIndex: 0,
             backgroundImages: [
-                '/gangster_assets/login_page_bg.png',
-                '/gangster_assets/login_page_bg_car_light.png',
-                '/gangster_assets/login_page_bg_home_light.png',
-                '/gangster_assets/login_page_bg_light.png'
+                '/gangster_assets/dash1/bg.webp',
+                '/gangster_assets/dash1/bg1.png',
+                '/gangster_assets/dash1/bg2.png',
+                '/gangster_assets/dash1/bg3.png'
             ],
             imagesLoaded: false,
         };
