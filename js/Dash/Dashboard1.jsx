@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './css/LoginWin.css';
+import '../css/dash1.css';
 
 class BackgroundAnimation extends Component {
     constructor(props) {
