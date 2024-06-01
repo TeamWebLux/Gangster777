@@ -3,7 +3,7 @@ import Dashboard from './Dashboard';
 import Dashboard1 from './Dashboard1';
 import Dashboard2 from './Dashboard2';
 // import Dashboard3 from './Dashboard3';
-import Login from './Login';
+import Login from '../Login';
 
 const App = () => {
   const [type, setType] = useState('');
