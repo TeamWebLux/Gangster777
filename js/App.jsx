@@ -15,7 +15,7 @@ const App = () => {
 
     if (type === 'hub') {
      
-      const condition = 1; //set dash
+      const condition = 10; //set dash
 
       if (condition == 1 ) {
         setDashboardType('dash1');
