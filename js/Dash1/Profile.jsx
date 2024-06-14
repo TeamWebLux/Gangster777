@@ -5,10 +5,13 @@ import styled from 'styled-components';
 const ProfileContainer = styled.div`
     display: flex;
     align-items: center;
-    margin: 20px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 10px;
     border-radius: 10px;
+    z-index: 1000; /* Ensure it is on top of other elements */
 `;
 
 const ProfileAvatar = styled.img`
@@ -29,18 +32,18 @@ const ProfileName = styled.h2`
     font-size: 1.5em;
 `;
 
-const ProfileEmail = styled.p`
+const ProfileBalance = styled.p`
     margin: 0;
     color: #666;
 `;
 
-const Profile = ({ username, email, avatar }) => {
+const Profile = ({ name, balance, avatar }) => {
     return (
         <ProfileContainer>
             <ProfileAvatar src={avatar} alt="Avatar" />
             <ProfileDetails>
-                <ProfileName>{username}</ProfileName>
-                <ProfileEmail>{email}</ProfileEmail>
+                <ProfileName>{name}</ProfileName>
+                <ProfileBalance>Balance: ${balance}</ProfileBalance>
             </ProfileDetails>
         </ProfileContainer>
     );
