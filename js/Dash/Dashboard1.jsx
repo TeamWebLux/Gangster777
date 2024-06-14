@@ -69,7 +69,7 @@ class Dashboard1 extends Component {
                         <Profile 
                         name="Gangster777" 
                         balance="1000" 
-                        avatar="/path/to/avatar.png" 
+                        backgroundImage="/path/to/avatar.png" 
                         />
                     </>
                 )}
