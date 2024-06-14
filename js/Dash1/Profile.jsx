@@ -8,23 +8,19 @@ const ProfileContainer = styled.div`
     position: absolute;
     top: 20px;
     left: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
     padding: 10px;
     border-radius: 10px;
     z-index: 1000; /* Ensure it is on top of other elements */
-`;
-
-const ProfileAvatar = styled.img`
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-right: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white; /* Text color to stand out against the background */
 `;
 
 const ProfileDetails = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-shadow: 1px 1px 2px black; /* Optional: add a text shadow for better readability */
 `;
 
 const ProfileName = styled.h2`
@@ -34,13 +30,11 @@ const ProfileName = styled.h2`
 
 const ProfileBalance = styled.p`
     margin: 0;
-    color: #666;
 `;
 
-const Profile = ({ name, balance, avatar }) => {
+const Profile = ({ name, balance, backgroundImage }) => {
     return (
-        <ProfileContainer>
-            <ProfileAvatar src={avatar} alt="Avatar" />
+        <ProfileContainer style={{ backgroundImage: `url(${backgroundImage})`, width: '250px', height: '100px' }}>
             <ProfileDetails>
                 <ProfileName>{name}</ProfileName>
                 <ProfileBalance>Balance: ${balance}</ProfileBalance>
