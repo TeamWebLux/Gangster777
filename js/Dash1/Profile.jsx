@@ -6,8 +6,8 @@ const ProfileContainer = styled.div`
     display: flex;
     align-items: center;
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 0px;
+    left: 0px;
     padding: 10px;
     border-radius: 10px;
     z-index: 1000; /* Ensure it is on top of other elements */
