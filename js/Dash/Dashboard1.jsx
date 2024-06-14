@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../css/dash1.css';
 import Profile from '../Dash1/Profile'; // Import the Profile component
 import Exit from '../Dash1/Exit'; // Import the Profile component
+import mainSlider from '../Dash1/mainSlider';  // Import the Profile component
 
 class Dashboard1 extends Component {
     constructor(props) {
@@ -78,6 +79,10 @@ class Dashboard1 extends Component {
 
                         <div>
                             <Exit />
+                        </div>
+
+                        <div>
+                        <mainSlider />
                         </div>
                     </>
                 )}
