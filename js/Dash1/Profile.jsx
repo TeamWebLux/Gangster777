@@ -7,7 +7,7 @@ const ProfileContainer = styled.div`
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 0px;
+    top: -20px;
     left: 0px;
     border-radius: 10px;
     z-index: 1000; /* Ensure it is on top of other elements */
