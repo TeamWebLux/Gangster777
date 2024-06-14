@@ -9,7 +9,6 @@ const ProfileContainer = styled.div`
     position: absolute;
     top: 0px;
     left: 0px;
-    padding: 10px;
     border-radius: 10px;
     z-index: 1000; /* Ensure it is on top of other elements */
     background-size: contain;
@@ -23,7 +22,6 @@ const ProfileDetails = styled.div`
     flex-direction: column;
     justify-content: center;
     text-shadow: 1px 1px 2px black; /* Optional: add a text shadow for better readability */
-    background-color: rgba(0, 0, 0, 0.5); /* Optional: background for better readability */
     padding: 10px;
     border-radius: 10px;
 `;
