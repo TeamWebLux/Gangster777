@@ -15,10 +15,18 @@ const ExitImage = styled.img`
     cursor: pointer;
 `;
 
+const handleExitClick = () => {
+    window.location.href = '/logout';
+};
+
 const Exit = () => {
     return (
         <ExitContainer>
-            <ExitImage src="/gangster_assets/dash1/profile/exit.png" alt="Exit" />
+            <ExitImage 
+                src="/gangster_assets/dash1/profile/exit.png" 
+                alt="Exit" 
+                onClick={handleExitClick} 
+            />
         </ExitContainer>
     );
 };
