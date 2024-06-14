@@ -67,7 +67,7 @@ class Dashboard1 extends Component {
                     <div className="background-container" style={{ backgroundImage: `url(${backgroundImage})` }}>
                     </div>
                         <Profile 
-                        username="Gangster777" 
+                        name="Gangster777" 
                         balance="1000" 
                         avatar="/path/to/avatar.png" 
                         />
