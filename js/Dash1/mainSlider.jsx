@@ -9,7 +9,7 @@ const cards = [
     <div>Card 5 Content</div>
 ];
 
-const App = () => {
+const mainSlider = () => {
     return (
         <div>
             <h1>Card Slider</h1>
@@ -18,4 +18,4 @@ const App = () => {
     );
 };
 
-export default App;
+export default mainSlider;
