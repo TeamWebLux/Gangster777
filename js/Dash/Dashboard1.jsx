@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../css/dash1.css';
+import Profile from '../Dash1/Profile'; // Import the Profile component
 
 class Dashboard1 extends Component {
     constructor(props) {
@@ -63,6 +64,11 @@ class Dashboard1 extends Component {
                 )}
                 {imagesLoaded && (
                     <div className="background-container" style={{ backgroundImage: `url(${backgroundImage})` }}>
+                        <Profile 
+                            username="John Doe" 
+                            email="john.doe@example.com" 
+                            avatar="/path/to/avatar.png" 
+                        />
                     </div>
                 )}
             </div>
