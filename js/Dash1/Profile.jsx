@@ -34,7 +34,7 @@ const ProfileBalance = styled.p`
 
 const Profile = ({ name, balance, backgroundImage }) => {
     return (
-        <ProfileContainer style={{ backgroundImage: `url(${backgroundImage})`, width: '350px', height: '200px' }}>
+        <ProfileContainer style={{ backgroundImage: `url(${backgroundImage})`, width: '250px' }}>
             <ProfileDetails>
                 <ProfileName>{name}</ProfileName>
                 <ProfileBalance>Balance: ${balance}</ProfileBalance>
