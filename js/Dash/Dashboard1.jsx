@@ -63,13 +63,15 @@ class Dashboard1 extends Component {
                     </div>
                 )}
                 {imagesLoaded && (
+                    <>
                     <div className="background-container" style={{ backgroundImage: `url(${backgroundImage})` }}>
-                        <Profile 
-                            username="John Doe" 
-                            email="john.doe@example.com" 
-                            avatar="/path/to/avatar.png" 
-                        />
                     </div>
+                        <Profile 
+                        username="Gangster777" 
+                        balance="1000" 
+                        avatar="/path/to/avatar.png" 
+                        />
+                    </>
                 )}
             </div>
         )
