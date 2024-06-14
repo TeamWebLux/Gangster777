@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../css/dash1.css';
 import Profile from '../Dash1/Profile'; // Import the Profile component
+import Exit from '../Dash1/Exit'; // Import the Profile component
 
 class Dashboard1 extends Component {
     constructor(props) {
@@ -66,11 +67,18 @@ class Dashboard1 extends Component {
                     <>
                     <div className="background-container" style={{ backgroundImage: `url(${backgroundImage})` }}>
                     </div>
+                    <div>
+
                         <Profile 
                         name="Gangster777" 
                         balance="1000" 
                         backgroundImage="/gangster_assets/dash1/profile/profile_bar.png" 
                         />
+                    </div>
+
+                        <div>
+                            <Exit />
+                        </div>
                     </>
                 )}
             </div>
