@@ -5,14 +5,16 @@ import styled from 'styled-components';
 const ProfileContainer = styled.div`
     display: flex;
     align-items: center;
+    justify-content: center;
     position: absolute;
     top: 0px;
     left: 0px;
     padding: 10px;
     border-radius: 10px;
     z-index: 1000; /* Ensure it is on top of other elements */
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
     color: white; /* Text color to stand out against the background */
 `;
 
@@ -21,6 +23,9 @@ const ProfileDetails = styled.div`
     flex-direction: column;
     justify-content: center;
     text-shadow: 1px 1px 2px black; /* Optional: add a text shadow for better readability */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: background for better readability */
+    padding: 10px;
+    border-radius: 10px;
 `;
 
 const ProfileName = styled.h2`
@@ -34,7 +39,7 @@ const ProfileBalance = styled.p`
 
 const Profile = ({ name, balance, backgroundImage }) => {
     return (
-        <ProfileContainer style={{ backgroundImage: `url(${backgroundImage})`, width: '270px', height: '100%' }}>
+        <ProfileContainer style={{ backgroundImage: `url(${backgroundImage})`, width: '350px', height: '200px' }}>
             <ProfileDetails>
                 <ProfileName>{name}</ProfileName>
                 <ProfileBalance>Balance: ${balance}</ProfileBalance>
