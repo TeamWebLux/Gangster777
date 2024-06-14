@@ -10,8 +10,8 @@ const ExitContainer = styled.div`
 `;
 
 const ExitImage = styled.img`
-    width: 50px; /* Adjust size as needed */
-    height: 50px; /* Adjust size as needed */
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Adjust size as needed */
     cursor: pointer;
 `;
 
