@@ -24,15 +24,22 @@ const ProfileDetails = styled.div`
     text-shadow: 1px 1px 2px black; /* Optional: add a text shadow for better readability */
     padding: 10px;
     border-radius: 10px;
+    position: relative; /* Required for absolute positioning inside */
 `;
 
 const ProfileName = styled.h2`
     margin: 0;
     font-size: 1.5em;
+    position: relative;
+    top: 10px; /* Adjust this value to position vertically */
+    left: 10px; /* Adjust this value to position horizontally */
 `;
 
 const ProfileBalance = styled.p`
     margin: 0;
+    position: relative;
+    bottom: 10px; /* Adjust this value to position vertically */
+    right: 10px; /* Adjust this value to position horizontally */
 `;
 
 const Profile = ({ name, balance, backgroundImage }) => {
