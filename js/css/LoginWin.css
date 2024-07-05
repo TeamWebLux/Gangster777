@@ -10,12 +10,12 @@
 
 .login-form {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
-    max-width: 500px;
-    max-height: 500px;
+    width: 90%;
+    max-width: 400px;
+    max-height: 400px;
     padding-top: 50%;
     background: url('/gangster_assets/login_form.png') no-repeat center center;
     background-size: contain;
@@ -28,7 +28,7 @@
 }
 
 .login-input {
-    width: 80%;
+    width: 70%;
     margin-bottom: 15px;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.1);
@@ -46,7 +46,7 @@
     display: flex;
     align-items: center;
     color: #fff;
-    width: 80%;
+    width: 70%;
 }
 
 .remember-me input[type="checkbox"] {
@@ -58,6 +58,8 @@
 }
 
 .login-button {
+    position: relative;
+    top:-40px;
     width: 80%;
     color: #fff;
     border: none;

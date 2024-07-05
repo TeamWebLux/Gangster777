@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Dashboard from './Dash/Dashboard';
-import Dashboard1 from './Dash/Dashboard1';
-import Dashboard2 from './Dash/Dashboard2';
+// import Dashboard1 from './Dash/Dashboard1';
+// import Dashboard2 from './Dash/Dashboard2';
 // import Dashboard3 from './Dashboard3';
 import Login from './Login';
 
@@ -15,7 +15,7 @@ const App = () => {
 
     if (type === 'hub') {
      
-      const condition = 1; //set dash
+      const condition = 121; //set dash
 
       if (condition == 1 ) {
         setDashboardType('dash1');
@@ -31,9 +31,9 @@ const App = () => {
   const renderDashboard = () => {
     switch (dashboardType) {
       case 'dash1':
-        return <Dashboard1 />;
+        return <Dashboard />;
       case 'dash2':
-        return <Dashboard2 />;
+        return <Dashboard />;
       // case 'dash3':
         // return <Dashboard3 />;
       default:
